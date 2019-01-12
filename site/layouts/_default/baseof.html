@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+
+    <head>
+
+        {{ partial "head.html" . }}
+
+        {{ block "pre-head-close" . }}{{ end }}
+
+    </head>
+
+    <body>
+
+        {{ block "post-body-open" . }}{{ end }}
+
+        {{ partial "header.html" . }}
+
+        <div id="content">
+            {{ block "main" . }}{{ end }}
+        </div>
+
+        {{ partial "footer.html" . }}
+
+        {{ block "pre-body-close" . }}{{ end }}
+
+    </body>
+
+</html>

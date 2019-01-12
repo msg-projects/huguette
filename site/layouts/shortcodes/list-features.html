@@ -1,0 +1,17 @@
+<ul>
+    {{ range $.Site.Data.features }}
+        <li>
+
+            <span class="status">
+                {{- if .ready -}}
+                    ✅
+                {{- else -}}
+                    👨‍💻
+                {{- end -}}
+            </span>
+
+            {{ .name }}
+
+        </li>
+    {{ end }}
+</ul>

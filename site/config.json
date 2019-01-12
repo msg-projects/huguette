@@ -1,0 +1,22 @@
+{
+
+    "title": "Huguette",
+    "description": "Performance oriented Hugo & Webpack boilerplate",
+
+    "baseurl": "https://huguette.com",
+
+    "languageCode": "en-gb",
+    "languageLang": "en",
+
+    "disableHugoGeneratorInject": true,
+
+    "disableKinds": [
+        "taxonomy",
+        "taxonomyTerm"
+    ],
+
+    "params": {
+        "author": "Miguel Sanchez Gonzalez"
+    }
+
+}

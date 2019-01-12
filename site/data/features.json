@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Hugo starter pack",
+        "ready": true
+    },
+    {
+        "name": "Webpack",
+        "ready": false
+    },
+    {
+        "name": "SASS",
+        "ready": false
+    },
+    {
+        "name": "SASS sourcemaps",
+        "ready": true
+    },
+    {
+        "name": "Post CSS",
+        "ready": false
+    },
+    {
+        "name": "Image Sharp",
+        "ready": false
+    }
+]

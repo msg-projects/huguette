@@ -1,0 +1,68 @@
+{
+    "name": "huguette",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rm -rf ./public",
+        "hugo": "hugo",
+        "hugo:base": "hugo -s ./site -d ../public -v --minify",
+        "predev:hugo": "npm run clean",
+        "dev:hugo": "npm run hugo:base -- -w --debug",
+        "dev:webpack": "webpack-dev-server --config ./build/webpack.development.babel.js",
+        "prebuild": "npm run clean",
+        "build": "npm run build:hugo",
+        "build:hugo": "npm run hugo:base",
+        "build:webpack": "cross-env NODE_ENV=production webpack --config ./build/webpack.production.babel.js --inline"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/msg-projects/huguette.git"
+    },
+    "keywords": [
+        "webpack",
+        "hugo",
+        "static"
+    ],
+    "author": {
+        "name": "Miguel Sanchez Gonzalez",
+        "email": "miguelsanychez@gmail.com",
+        "url": "https://miguelsanchezgonzalez.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/msg-projects/huguette/issues"
+    },
+    "homepage": "https://github.com/msg-projects/huguette#readme",
+    "dependencies": {
+        "hugo-bin": "0.41.0"
+    },
+    "devDependencies": {
+        "@babel/core": "7.2.2",
+        "@babel/plugin-proposal-object-rest-spread": "7.2.0",
+        "@babel/plugin-syntax-object-rest-spread": "7.2.0",
+        "@babel/preset-env": "7.2.3",
+        "@babel/register": "7.0.0",
+        "@msg-labs/eslint-config": "1.0.4",
+        "babel-loader": "8.0.5",
+        "clean-webpack-plugin": "1.0.0",
+        "cross-env": "5.2.0",
+        "css-loader": "2.1.0",
+        "eslint": "5.12.1",
+        "file-loader": "3.0.1",
+        "mini-css-extract-plugin": "0.5.0",
+        "node-sass": "4.11.0",
+        "optimize-css-assets-webpack-plugin": "5.0.1",
+        "postcss-loader": "3.0.0",
+        "sass-loader": "7.1.0",
+        "sharp": "0.21.3",
+        "sharp-loader": "1.1.0",
+        "style-loader": "0.23.1",
+        "uglifyjs-webpack-plugin": "2.1.1",
+        "webpack": "4.28.4",
+        "webpack-assets-manifest": "3.1.1",
+        "webpack-cli": "3.2.1",
+        "webpack-dev-server": "3.1.14",
+        "webpack-merge": "4.2.1"
+    }
+}
