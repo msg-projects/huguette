@@ -43,8 +43,8 @@ export default merge( common, {
 
     plugins: [
         new CleanWebpackPlugin( [
-            '../public/**/*.js',
-            '../public/**/*.css',
+            '../site/static/output/**/*.js',
+            '../site/static/output/**/*.css',
             '../site/content/webpack.json'
         ] ),
 

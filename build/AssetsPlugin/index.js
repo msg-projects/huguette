@@ -9,7 +9,7 @@ import {
 
 
 const manifest = new WebpackAssetsManifest( {
-    output: '../../data',
+    output: './data/manifest.json',
     space: 4,
     writeToDisk: true
 } );

@@ -15,19 +15,14 @@ const BASE = resolve( __dirname, '../' );
 export default {
 
     entry: {
-        images: join( BASE, 'src', 'images.js' ),
-        main: join( BASE, 'src', 'index.js' ),
-        scss: join( BASE, 'src', 'scss.js' )
+        'static/output/images': join( BASE, 'src', 'images.js' ),
+        'static/output/main': join( BASE, 'src', 'index.js' ),
+        'static/output/scss': join( BASE, 'src', 'scss.js' )
     },
 
 
     module: {
         rules: [
-
-            {
-                loader: 'file-loader?name=/[hash].[ext]',
-                test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/u
-            },
 
             {
                 exclude: /node_modules/u,
@@ -73,16 +68,15 @@ export default {
 
             {
                 loader: 'sharp-loader',
-                query: {
+                options: {
                     cacheDirectory: true,
                     name: '[name].[hash:8].[ext]',
                     presets: {
-                        optimize: {
-                            format: [
-                                'webp',
-                                'jpeg'
-                            ],
-                            quality: 80
+                        def: {
+                            format: [ 'webp', 'jpg' ]
+                        },
+                        test: {
+                            format: ['webp', {id: 'jpeg', quality: 60}],
                         }
                     }
                 },
@@ -93,7 +87,7 @@ export default {
     },
 
     output: {
-        path: join( BASE, 'site/static/output' )
+        path: join( BASE, 'site' )
     },
 
     plugins: [ manifest ]
