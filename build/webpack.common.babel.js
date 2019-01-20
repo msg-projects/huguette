@@ -70,13 +70,18 @@ export default {
                 loader: 'sharp-loader',
                 options: {
                     cacheDirectory: true,
-                    name: '[name].[hash:8].[ext]',
+                    context: 'src',
+                    name: 'static/[path][name].[hash:8].[ext]',
                     presets: {
-                        def: {
-                            format: [ 'webp', 'jpg' ]
+                        default: {
+                            format: [
+                                'webp',
+                                'jpg'
+                            ]
                         },
-                        test: {
-                            format: ['webp', {id: 'jpeg', quality: 60}],
+                        inline: {
+                            format: 'jpg',
+                            inline: true
                         }
                     }
                 },

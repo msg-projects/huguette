@@ -30,10 +30,11 @@ manifest.hooks.transform.tap( 'test', ( assets, currentManifest ) => {
         const fullExtension = extname( key );
         const extensionName = fullExtension.slice( FIRST_CHARACTER );
         const fileName = basename( value, extname( value ) );
+        const prefixLessPath = key.replace( /^static/u, '' );
 
         group[ fileName ] = {
             ...group[ fileName ] || {},
-            [ extensionName ]: key
+            [ extensionName ]: prefixLessPath
         };
 
         manifest[ 'delete' ]( value );
