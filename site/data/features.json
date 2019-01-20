@@ -5,11 +5,11 @@
     },
     {
         "name": "Webpack",
-        "ready": false
+        "ready": true
     },
     {
         "name": "SASS",
-        "ready": false
+        "ready": true
     },
     {
         "name": "SASS sourcemaps",
@@ -17,10 +17,10 @@
     },
     {
         "name": "Post CSS",
-        "ready": false
+        "ready": true
     },
     {
         "name": "Image Sharp",
-        "ready": false
+        "ready": true
     }
 ]
