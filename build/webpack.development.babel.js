@@ -29,7 +29,8 @@ export default merge( common, {
         port: PORT,
         quiet: false,
         stats: 'normal',
-        watchContentBase: true
+        watchContentBase: true,
+        writeToDisk: true
     },
 
     devtool: 'source-map',
