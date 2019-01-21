@@ -4,17 +4,24 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "clean": "rm -rf ./public",
+
+        "clean": "run-p clean:**",
+        "clean:hugo": "rm -rf ./public",
+        "clean:webpack": "rm -rf ./site/data/manifest.json ./site/static/assets",
+
         "hugo": "hugo",
         "hugo:base": "hugo -s ./site -d ../public -v --minify",
-        "predev:hugo": "npm run clean",
+
+        "predev": "npm run clean",
         "dev": "run-p dev:**",
         "dev:hugo": "npm run hugo:base -- -w --debug",
         "dev:webpack": "webpack-dev-server --config ./build/webpack.development.babel.js",
+
         "prebuild": "npm run clean",
         "build": "npm run build:webpack && npm run build:hugo",
         "build:hugo": "npm run hugo:base",
         "build:webpack": "cross-env NODE_ENV=production webpack --config ./build/webpack.production.babel.js --inline"
+
     },
     "repository": {
         "type": "git",

@@ -14,6 +14,7 @@ export default merge( common, {
 
     optimization: {
         minimizer: [
+
             new UglifyJsPlugin( {
                 cache: true,
                 parallel: true,
@@ -26,6 +27,7 @@ export default merge( common, {
             } ),
 
             new OptimizeCSSAssetsPlugin( {} )
+
         ]
     },
 

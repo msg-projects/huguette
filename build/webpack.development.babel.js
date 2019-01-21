@@ -4,19 +4,19 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 // Nodejs
-import path from 'path';
+import { join } from 'path';
 
 // Local
+import { PORT } from './configuration.js';
 import common from './webpack.common.babel.js';
 
-const DEFAULT_PORT = 3000;
-const PORT = process.env.PORT || DEFAULT_PORT;
+const CWD = process.cwd();
 
 
 export default merge( common, {
 
     devServer: {
-        contentBase: path.join( process.cwd(), './public' ),
+        contentBase: join( CWD, 'public' ),
         historyApiFallback: {
             rewrites: [
                 {
@@ -43,11 +43,15 @@ export default merge( common, {
     },
 
     plugins: [
-        new CleanWebpackPlugin( [
-            '../site/static/output/**/*.js',
-            '../site/static/output/**/*.css',
-            '../site/content/webpack.json'
-        ] ),
+        new CleanWebpackPlugin(
+            [
+                `./**/*`,
+                '../../data/manifest.json'
+            ],
+            {
+                root: join( CWD, 'site', 'static', 'assets' )
+            }
+        ),
 
         new MiniCssExtractPlugin( {
             chunkFilename: '[id].css',

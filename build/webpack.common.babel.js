@@ -1,23 +1,23 @@
 // Webpack
-import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import manifest from './AssetsPlugin/index.js';
 
 // Node.js
+import { join } from 'path';
+
+// Base
 import {
-    join,
-    resolve
-} from 'path';
+    OUTPUT,
+    BASE
+} from './configuration.js';
 
-
-const BASE = resolve( __dirname, '../' );
 
 export default {
 
     entry: {
-        'static/output/images': join( BASE, 'src', 'images.js' ),
-        'static/output/main': join( BASE, 'src', 'index.js' ),
-        'static/output/scss': join( BASE, 'src', 'scss.js' )
+        'css/scss': join( BASE, 'src', 'scss.js' ),
+        'images/images': join( BASE, 'src', 'images.js' ),
+        'scripts/main': join( BASE, 'src', 'index.js' )
     },
 
 
@@ -71,7 +71,7 @@ export default {
                 options: {
                     cacheDirectory: true,
                     context: 'src',
-                    name: 'static/[path][name].[hash:8].[ext]',
+                    name: `[path][name].[hash:8].[ext]`,
                     presets: {
                         default: {
                             format: [
@@ -92,7 +92,7 @@ export default {
     },
 
     output: {
-        path: join( BASE, 'site' )
+        path: OUTPUT
     },
 
     plugins: [ manifest ]

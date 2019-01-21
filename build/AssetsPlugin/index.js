@@ -9,12 +9,12 @@ import {
 
 
 const manifest = new WebpackAssetsManifest( {
-    output: './data/manifest.json',
+    output: '../../data/manifest.json',
     space: 4,
     writeToDisk: true
 } );
 
-manifest.hooks.transform.tap( 'test', ( assets, currentManifest ) => {
+manifest.hooks.transform.tap( 'huguette', ( assets, currentManifest ) => {
 
     const { assetNames } = currentManifest;
 
@@ -30,7 +30,7 @@ manifest.hooks.transform.tap( 'test', ( assets, currentManifest ) => {
         const fullExtension = extname( key );
         const extensionName = fullExtension.slice( FIRST_CHARACTER );
         const fileName = basename( value, extname( value ) );
-        const prefixLessPath = key.replace( /^static/u, '' );
+        const prefixLessPath = `/assets/${ key }`;
 
         group[ fileName ] = {
             ...group[ fileName ] || {},

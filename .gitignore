@@ -1,5 +1,5 @@
 node_modules
 public
 site/data/manifest.json
-site/static/images
-site/static/output
+site/manifest.json
+site/static/assets
