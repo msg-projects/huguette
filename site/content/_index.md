@@ -4,7 +4,7 @@
 }
 
 # Welcome to Huguette!
-The most advanced Hugo & Webpack boilerplate
+The Hugo & Webpack boilerplate
 
 
 ##  Features
